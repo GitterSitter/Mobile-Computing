@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.trond.test.R;
+import com.example.trond.main.R;
 
 import java.util.ArrayList;
 
 public class CustomListAdapter extends ArrayAdapter<User> {
 
-
+private int layoutView;
 
     public CustomListAdapter(Context context, ArrayList<User> users) {
         super(context, 0, users);
@@ -26,7 +26,8 @@ public class CustomListAdapter extends ArrayAdapter<User> {
         User user = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(getLayoutView(), parent, false);
+            //R.layout.item_user
         }
         // Lookup view for data population
         TextView name = (TextView) convertView.findViewById(R.id.userName);
@@ -40,5 +41,14 @@ public class CustomListAdapter extends ArrayAdapter<User> {
         location.setText(user.location);
         // Return the completed view to render on screen
         return convertView;
+    }
+
+    public int getLayoutView(){
+
+        return layoutView;
+    }
+
+    public void setLayoutView(int layoutView){
+        this.layoutView = layoutView;
     }
 }

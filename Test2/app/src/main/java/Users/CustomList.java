@@ -1,10 +1,10 @@
-package Users;
+package users;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.example.trond.test.R;
+import com.example.trond.main.R;
 
 import java.util.ArrayList;
 

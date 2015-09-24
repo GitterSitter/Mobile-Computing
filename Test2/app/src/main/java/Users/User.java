@@ -1,10 +1,17 @@
-package Users;
+package users;
 
 public class User {
+
     public String name;
     public String age;
     public String sex;
     public String location;
+
+    // If the user is active atm
+    //private boolean active;
+
+    //The users friends
+    //private ArrayList<Users> friends;
 
     public User(String name, String age, String sex,String location) {
         this.name = name;

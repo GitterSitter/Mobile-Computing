@@ -1,7 +1,7 @@
 package maps;
 import android.location.Location;
 
-import com.example.trond.test.R;
+import com.example.trond.main.R;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;

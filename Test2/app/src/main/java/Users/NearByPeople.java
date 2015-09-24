@@ -1,4 +1,4 @@
-package Users;
+package users;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.trond.test.R;
+import com.example.trond.main.R;
 
 import java.util.ArrayList;
 
@@ -32,6 +32,8 @@ public class NearByPeople extends Activity {
 
        // itemsAdapter = new ArrayAdapter<String>(this,android.R.layout.activity_list_item,items);
         itemsAdapter = new CustomListAdapter(this,items);
+        itemsAdapter.setLayoutView(R.layout.new_people);
+
         listview.setAdapter(itemsAdapter);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -122,4 +124,24 @@ public class NearByPeople extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    public CustomListAdapter getNearByPeople(){
+        //Unchecked
+        return itemsAdapter;
+    }
+
+
+    public String showUsers(){
+        String userList = "";
+        for(User user : items){
+            userList += user.toString() + " \n";
+        }
+        return userList;
+    }
+
+
+
+
 }

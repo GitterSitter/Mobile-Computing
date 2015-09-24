@@ -1,4 +1,4 @@
-package Users;
+package users;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.trond.test.R;
+import com.example.trond.main.R;
 
 import java.util.ArrayList;
 
@@ -101,5 +101,25 @@ public class Friends extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public CustomListAdapter getFriendList(){
+        //Unchecked
+        return itemsAdapter;
+    }
+
+    public ArrayList<User> getFriendListUsers(){
+        //Unchecked
+        return items;
+    }
+
+    public String showUsers(){
+        String userList = "";
+        for(User user : items){
+            userList += user.toString() + " \n";
+        }
+        return userList;
     }
 }
